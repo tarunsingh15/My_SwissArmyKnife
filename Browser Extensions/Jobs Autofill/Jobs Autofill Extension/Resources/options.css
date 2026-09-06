@@ -1,0 +1,174 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #0b1220;
+  color: #e5e7eb;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1100px;
+  padding: 20px;
+  display: grid;
+  gap: 18px;
+}
+
+.titleRow {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 17px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  table-layout: fixed;
+}
+
+th,
+td {
+  border: 1px solid #243244;
+  padding: 6px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.dragCol {
+  width: 48px;
+  text-align: center;
+}
+
+th {
+  background-color: #111827;
+}
+
+input[type="text"],
+select,
+textarea {
+  min-width: 0;
+  width: 100%;
+  padding: 6px;
+  font-size: 13px;
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #e5e7eb;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 56px;
+}
+
+button {
+  font-size: 13px;
+  padding: 6px 10px;
+  background-color: #2563eb;
+  border: 1px solid #1d4ed8;
+  color: #ffffff;
+  border-radius: 6px;
+}
+
+.iconBtn {
+  padding: 4px 8px;
+  min-width: 34px;
+  background-color: #0f172a;
+  border-color: #334155;
+}
+
+.groupCard {
+  border: 1px solid #243244;
+  background: rgba(17, 24, 39, 0.35);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.dragHandle {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: #0f172a;
+  border: 1px dashed #475569;
+  color: #cbd5e1;
+  cursor: grab;
+}
+
+.draggableRow {
+  cursor: grab;
+}
+
+.draggableRow.dragging {
+  opacity: 0.55;
+}
+
+.datePart {
+  width: 56px !important;
+}
+
+.datePartYear {
+  width: 84px !important;
+}
+
+#resumeList {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.sectionHelp {
+  margin: 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 2.8em;
+  max-height: 2.8em;
+  overflow: auto;
+  line-height: 1.35;
+}
+
+textarea:focus {
+  max-height: 240px;
+}
+
+.statusToast {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  max-width: min(420px, 85vw);
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #14532d;
+  background: rgba(22, 101, 52, 0.95);
+  color: #ecfdf5;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 9999;
+}
+
+.statusToast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

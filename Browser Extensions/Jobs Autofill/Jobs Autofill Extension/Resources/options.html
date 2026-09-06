@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job App Autofill Options</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <div class="titleRow">
+        <h1>Job App Autofill - Settings</h1>
+      </div>
+
+      <section>
+        <h2>Resumes</h2>
+        <div class="row">
+          <input id="resumeNameInput" type="text" placeholder="Resume name" />
+          <input id="resumeFileInput" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+          <button id="addResumeBtn">Store resume</button>
+        </div>
+        <ul id="resumeList"></ul>
+        <p class="sectionHelp">Resumes are stored locally inside your Safari extension settings (not uploaded to any server by this extension).</p>
+      </section>
+
+      <section>
+        <h2>Profiles</h2>
+        <div class="row">
+          <select id="profileSelect"></select>
+          <button id="newProfileBtn">New profile</button>
+          <button id="duplicateProfileBtn">Duplicate</button>
+          <button id="renameProfileBtn">Rename</button>
+          <button id="deleteProfileBtn">Delete</button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Common fields</h2>
+        <table>
+          <thead>
+            <tr>
+              <th class="dragCol">Move</th>
+              <th>Type</th>
+              <th>Label</th>
+              <th>Value</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="fieldsBodyCommon"></tbody>
+        </table>
+        <p class="sectionHelp">
+          The <strong>Label</strong> field is a matcher spec for autofill.
+          Use multiple possible question labels separated by <code>;</code>.
+          Examples: <code>First name;Given name</code> or <code>Phone;Mobile</code>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Address</h2>
+        <div class="row">
+          <button id="addAddressFieldBtn" title="Add a new address field label to all address groups">Add address field</button>
+        </div>
+        <div id="addressGroupsRoot"></div>
+      </section>
+
+      <section>
+        <h2>Work history</h2>
+        <div class="row">
+          <button id="addWorkGroupBtn" title="Add a new work history group (copies labels, empty values)">Add work group</button>
+          <button id="addWorkFieldBtn" title="Add a new work history field label to all work groups">Add work field</button>
+        </div>
+        <div id="workGroupsRoot"></div>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <div class="row">
+          <button id="addEducationGroupBtn" title="Add a new education group (copies labels, empty values)">Add education group</button>
+          <button id="addEducationFieldBtn" title="Add a new education field label to all education groups">Add education field</button>
+        </div>
+        <div id="educationGroupsRoot"></div>
+      </section>
+
+      <section>
+        <h2>Common application questions</h2>
+        <p class="sectionHelp">
+          These are common screening questions seen on Workday and other ATS systems (work authorization, sponsorship, relocation, etc.).
+          Customize labels and values to match each application. Use <code>;</code> to provide multiple possible values.
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th class="dragCol">Move</th>
+              <th>Type</th>
+              <th>Label</th>
+              <th>Value</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="fieldsBodyCommonQuestions"></tbody>
+        </table>
+        <button id="addCommonQuestionBtn">Add common question</button>
+      </section>
+
+      <section>
+        <h2>Data transfer</h2>
+        <div class="row">
+          <button id="exportBtn">Export JSON</button>
+          <input id="importFileInput" type="file" accept="application/json" />
+          <button id="importBtn">Import JSON</button>
+        </div>
+      </section>
+
+      <div id="statusToast" class="statusToast" role="status" aria-live="polite"></div>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "extension_name": {
+        "message": "Job App Autofill",
+        "description": "The display name for the extension."
+    },
+    "extension_description": {
+        "message": "Autofills job applications with role-based profiles and resume selection while stopping for manual review.",
+        "description": "Description of what the extension does."
+    }
+}

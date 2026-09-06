@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job App Autofill</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main>
+      <div class="topBar">
+        <h1>Job App Autofill</h1>
+        <button id="openSettingsBtn" class="iconBtn" title="Open settings" aria-label="Open settings">⚙</button>
+      </div>
+      <section class="selectors">
+        <label>
+          Profile
+          <select id="profileSelect"></select>
+        </label>
+        <label>
+          Resume
+          <select id="resumeSelect"></select>
+        </label>
+      </section>
+
+      <section class="status">
+        <h2>Status</h2>
+        <p id="statusLine">Idle</p>
+        <p id="metaLine">Provider: - | Step: -</p>
+        <p id="countLine">Filled 0 | Skipped 0</p>
+        <p id="executionLine">Not executing</p>
+        <p id="errorLine" style="color: #f87171; display: none;">No errors</p>
+      </section>
+
+      <section class="actions">
+        <button id="startBtn" class="iconBtn" title="Run on this page" aria-label="Run">▶</button>
+        <button id="pauseBtn" class="iconBtn" title="Pause execution" aria-label="Pause">⏸</button>
+        <button id="resumeBtn" class="iconBtn" title="Resume execution" aria-label="Resume">⏵</button>
+        <button id="stopBtn" class="iconBtn" title="Stop execution" aria-label="Stop">⏹</button>
+      </section>
+
+      <section class="reviewActions" id="reviewActions" style="display: none;">
+        <button id="nextSkippedBtn" class="iconBtn" title="Focus next required skipped field" aria-label="Next skipped field">⤓</button>
+        <button id="continueBtn" class="iconBtn" title="Continue to next page" aria-label="Continue">⤴</button>
+      </section>
+
+      <section class="reviewActions" id="education2Actions" style="display: none;">
+        <button id="fillEducation2Btn" class="iconBtn" title="Fill additional education groups" aria-label="Fill education set 2">②</button>
+        <button id="skipEducation2Btn" class="iconBtn" title="Skip additional education groups" aria-label="Skip education set 2">↷</button>
+      </section>
+
+      <section>
+        <h2>Identified fields</h2>
+        <ul id="identifiedList"></ul>
+      </section>
+
+      <section>
+        <h2>Skipped fields</h2>
+        <ul id="skippedList"></ul>
+      </section>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
